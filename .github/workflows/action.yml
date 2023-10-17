@@ -1,0 +1,13 @@
+name: MY FIRST GITHUB ACTION
+
+on:
+  push:
+    branches:
+        - master
+
+jobs:
+  build:
+    steps:
+      - uses: action/checkout@v2
+      - name: Build docker images
+        run: docker build -t demo .
